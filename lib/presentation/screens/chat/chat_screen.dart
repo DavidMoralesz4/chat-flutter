@@ -14,7 +14,7 @@ class ChatScreen extends StatelessWidget {
               backgroundImage: NetworkImage('https://static.vecteezy.com/system/resources/previews/013/656/780/original/ai-ia-logo-design-template-vector.jpg'),
             ),
           ),
-          title: Text('Lupe Gpt', style: TextStyle( color: Colors.white ),),
+          title: Text('Lupe GPT', style: TextStyle( color: Colors.white ),),
           centerTitle: true,
           backgroundColor: Colors.grey[900],
         ),
