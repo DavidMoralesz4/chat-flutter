@@ -11,11 +11,8 @@ class ChatView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final chatProvier =
-        context
-            .watch<
-              ChatProvider
-            >(); // Aca estoy buscando una instancia de ChatProvider
+    // Aca estoy buscando una instancia de ChatProvider
+    final chatProvier = context.watch<ChatProvider>();
 
     return SafeArea(
       child: Padding(
@@ -27,17 +24,18 @@ class ChatView extends StatelessWidget {
               child: ListView.builder(
                 itemCount: chatProvier.messageList.length,
                 itemBuilder: (context, index) {
+                  // instancia de message, q es mi identidad
                   final message = chatProvier.messageList[index];
 
                   return (message.fromWho == FromWho.hers)
-                      ? MyMessageBubble()
-                      : HerMessageBubble();
+                      ? HerMessageBubble()
+                      : MyMessageBubble(message: message);
                 },
               ),
             ),
 
             // Caja de texto
-            MessageFieldBox(),
+            MessageFieldBox(onValue: (value) => chatProvier.sendMessage(value)),
           ],
         ),
       ),
