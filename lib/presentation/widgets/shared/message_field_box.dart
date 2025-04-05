@@ -45,7 +45,7 @@ class MessageFieldBox extends StatelessWidget {
       focusNode: focusNode,
       controller: textController,
       decoration: inputDecoration, 
-      onFieldSubmitted: (value) {
+      onFieldSubmitted: (value) { // Regresa el valor en la caja de texto
           submitText(value);
       },
     );

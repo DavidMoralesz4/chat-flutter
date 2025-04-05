@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ChatView extends StatelessWidget {
+
   const ChatView({super.key});
 
   @override
@@ -22,6 +23,8 @@ class ChatView extends StatelessWidget {
             Expanded(
               /// Expanded - Un hijo ocupara todo el espacio disponible dependiendo de la direccion.
               child: ListView.builder(
+                // scrollDirection: Axis.vertical,
+                controller: chatProvier.scrollController,
                 itemCount: chatProvier.messageList.length,
                 itemBuilder: (context, index) {
                   // instancia de message, q es mi identidad
